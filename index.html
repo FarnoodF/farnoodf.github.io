@@ -40,7 +40,7 @@
       - #SIDEBAR
     -->
 
-    <aside class="sidebar" data-sidebar>
+    <aside class="sidebar" data-sidebar data-sidebar-btn>
 
       <div class="sidebar-info">
 
@@ -55,9 +55,9 @@
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
+          <span>Contacts</span>
 
-          <ion-icon name="chevron-down"></ion-icon>
+          <!-- <ion-icon name="chevron-down"></ion-icon> -->
         </button>
 
       </div>
@@ -153,19 +153,19 @@
         <ul class="navbar-list">
 
           <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
+            <button class="navbar-link  active" data-nav-link onclick="elementEnableFunc(sidebar, false)">About</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
+            <button class="navbar-link" data-nav-link onclick="elementEnableFunc(sidebar, false)">Resume</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
+            <button class="navbar-link" data-nav-link onclick="elementEnableFunc(sidebar, false)">Portfolio</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
+            <button class="navbar-link" data-nav-link onclick="elementEnableFunc(sidebar, true)">Contact</button>
           </li>
 
         </ul>

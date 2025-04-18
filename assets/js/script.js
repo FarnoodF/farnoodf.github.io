@@ -3,7 +3,29 @@
 
 
 // element toggle function
-const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
+const elementToggleFunc = function (elem) {
+  function isMobileView() {
+    return window.innerWidth < 1250;
+  }
+  if (isMobileView()) {
+    elem.classList.toggle("active");
+  }
+}
+
+const elementEnableFunc = function (elem, enable) {
+  function isMobileView() {
+    return window.innerWidth < 1250;
+  }
+  if (isMobileView()) {
+    if (enable) {
+      elem.classList.add("active");
+    } else {
+      elem.classList.remove("active");
+    }
+  } else {
+    elem.classList.remove("active");
+  }
+}
 
 
 
