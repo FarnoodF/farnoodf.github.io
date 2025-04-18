@@ -157,3 +157,12 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+function openModal(imageSrc) {
+  document.getElementById('modalImg').src = imageSrc;
+  document.getElementById('imgModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('imgModal').style.display = "none";
+}

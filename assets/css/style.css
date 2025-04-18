@@ -24,50 +24,50 @@
   /* gradient */
 
   --bg-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(240, 1%, 25%) 3%, 
-    hsl(0, 0%, 19%) 97%
-  );
-  --bg-gradient-jet: linear-gradient(
-    to bottom right, 
-    hsla(240, 1%, 18%, 0.251) 0%, 
-    hsla(240, 2%, 11%, 0) 100%
-  ), hsl(240, 2%, 13%);
-  --bg-gradient-yellow-1: linear-gradient(
-    to bottom right, 
-    hsl(45, 100%, 71%) 0%, 
-    hsla(36, 100%, 69%, 0) 50%
-  );
-  --bg-gradient-yellow-2: linear-gradient(
-    135deg, 
-    hsla(45, 100%, 71%, 0.251) 0%, 
-    hsla(35, 100%, 68%, 0) 59.86%
-  ), hsl(240, 2%, 13%);
-  --border-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(0, 0%, 25%) 0%, 
-    hsla(0, 0%, 25%, 0) 50%
-  );
-  --text-gradient-yellow: linear-gradient(
-    to right, 
-    hsl(45, 100%, 72%), 
-    hsl(35, 100%, 68%)
-  );
+    to bottom right,
+    hsl(210, 3%, 30%) 3%,
+    hsl(212, 18%, 18%) 97%
+    );
+    --bg-gradient-jet: linear-gradient(
+    to bottom right,
+    hsla(212, 18%, 16%, 0.251) 0%,
+    hsla(212, 18%, 10%, 0) 100%
+    ), hsl(212, 18%, 12%);
+    --bg-gradient-yellow-1: linear-gradient(
+    to bottom right,
+    hsl(45, 80%, 54%) 0%,
+    hsla(36, 80%, 52%, 0) 50%
+    );
+    --bg-gradient-yellow-2: linear-gradient(
+    135deg,
+    hsla(45, 80%, 54%, 0.251) 0%,
+    hsla(35, 80%, 50%, 0) 59.86%
+    ), hsl(212, 18%, 12%);
+    --border-gradient-onyx: linear-gradient(
+    to bottom right,
+    hsl(212, 18%, 24%) 0%,
+    hsla(212, 18%, 24%, 0) 50%
+    );
+    --text-gradient-yellow: linear-gradient(
+    to right,
+    hsl(45, 80%, 56%),
+    hsl(35, 80%, 52%)
+    );
 
-  /* solid */
+    /* solid */
 
-  --jet: hsl(0, 0%, 22%);
-  --onyx: hsl(240, 1%, 17%);
-  --eerie-black-1: hsl(240, 2%, 13%);
-  --eerie-black-2: hsl(240, 2%, 12%);
-  --smoky-black: hsl(0, 0%, 7%);
-  --white-1: hsl(0, 0%, 100%);
-  --white-2: hsl(0, 0%, 98%);
-  --orange-yellow-crayola: hsl(45, 100%, 72%);
-  --vegas-gold: hsl(45, 54%, 58%);
-  --light-gray: hsl(0, 0%, 84%);
-  --light-gray-70: hsla(0, 0%, 84%, 0.7);
-  --bittersweet-shimmer: hsl(0, 43%, 51%);
+    --jet: hsl(212, 18%, 24%);
+    --onyx: hsl(212, 18%, 18%);
+    --eerie-black-1: hsl(212, 18%, 12%);
+    --eerie-black-2: hsl(212, 18%, 10%);
+    --smoky-black: hsl(212, 18%, 6%);
+    --white-1: hsl(212, 18%, 89%);
+    --white-2: hsl(212, 18%, 84%);
+    --orange-yellow-crayola: hsl(45, 80%, 56%);
+    --vegas-gold: hsl(45, 40%, 44%);
+    --light-gray: hsl(212, 18%, 64%);
+    --light-gray-70: hsla(212, 18%, 64%, 0.7);
+    --bittersweet-shimmer: hsl(0, 30%, 34%);
 
   /**
    * typography
@@ -95,7 +95,7 @@
   /**
    * shadow
    */
-  
+
   --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
   --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
   --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
@@ -130,6 +130,57 @@ a { text-decoration: none; }
 li { list-style: none; }
 
 img, ion-icon, a, button, time, span { display: block; }
+
+span.size-42 { font-size: 42px; }
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0.1)
+  }
+
+  to {
+    transform: scale(1)
+  }
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
 
 button {
   font: inherit;
@@ -464,7 +515,7 @@ main {
   border: 1px solid var(--jet);
   border-radius: 12px 12px 0 0;
   box-shadow: var(--shadow-2);
-  z-index: 5;
+  z-index: 1;
 }
 
 .navbar-list {
@@ -509,7 +560,7 @@ main {
 
 
 /**
- * #service 
+ * #service
  */
 
 .service { margin-bottom: 35px; }
@@ -540,7 +591,13 @@ main {
   z-index: -1;
 }
 
-.service-icon-box { margin-bottom: 10px; }
+.service-icon-box {
+  margin-bottom: 10px;
+  width: 60px; /* Adjust the size as needed */
+  height: 60px;
+  font-size: 24px; /* Adjust the icon size as needed */
+  color: var(--orange-yellow-crayola); /* Use your golden color variable */
+}
 
 .service-icon-box img { margin: auto; }
 
@@ -555,9 +612,8 @@ main {
   line-height: 1.6;
 }
 
-
 /**
- * #testimonials 
+ * #testimonials
  */
 
 .testimonials { margin-bottom: 30px; }
@@ -723,7 +779,7 @@ main {
 
 
 /**
- * #clients 
+ * #clients
  */
 
 .clients { margin-bottom: 15px; }
@@ -768,7 +824,7 @@ main {
 
 
 /**
- * education and experience 
+ * education and experience
  */
 
 .timeline { margin-bottom: 30px; }
@@ -831,7 +887,7 @@ main {
 
 
 /**
- * skills 
+ * skills
  */
 
 .skills-title { margin-bottom: 20px; }
@@ -1244,7 +1300,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-   * #PORTFOLIO, BLOG 
+   * #PORTFOLIO, BLOG
    */
 
   .project-img,
@@ -1638,7 +1694,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     width: max-content;
     margin-left: auto;
   }
-  
+
 }
 
 
@@ -1681,7 +1737,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-   * MAIN 
+   * MAIN
    */
 
   main { margin-bottom: 60px; }
