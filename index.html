@@ -51,7 +51,7 @@
         <div class="info-content">
           <h1 class="name" title="Farnood Faraji">Farnood Faraji</h1>
 
-          <p class="title"> Software Engineer <br> Machine Learning Engineer </p>
+          <p class="title"> Machine Learning Engineer <br> AI Software Engineer </p>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
@@ -130,9 +130,9 @@
 
           <li class="social-item">
             <a href="https://www.linkedin.com/in/farnood-faraji/" target="_blank" class="social-link">
-            <a href="https://farnoodf.github.io/" target="_blank" class="social-link">
-              <img src="./assets/images/logo.png" style="width: 2em; height: 2em;" />
-            </a>
+              <a href="https://farnoodf.github.io/" target="_blank" class="social-link">
+                <img src="./assets/images/logo.png" style="width: 2em; height: 2em;" />
+              </a>
           </li>
 
         </ul>
@@ -195,10 +195,13 @@
 
         <section class="about-text">
           <p>
-            With 5 years in software engineering, I specialize in cross-platform applications and optimizing ML model
-            performance. I led the award-winning Intel AI PC Challenge and directed a team to boost facial gesture
-            detection by 10% in 4 months. I build AI products end-to-end, from research to UI, with rapid cloud and edge
-            deployment.
+            With 5 years in software and ML engineering, I specialize in developing, maintaining and improving ML
+            models that work in real-time, as well as making the cross-platform and web applications that run those
+            models.
+            I led the award-winning Intel AI PC Challenge and directed a cross-functional team using Agile to boost
+            facial gesture
+            detection by 10% in 4 months. I build end-to-end AI products, from research to the user, with rapid cloud
+            and edge deployment.
           </p>
         </section>
 
@@ -209,7 +212,7 @@
 
         <section class="service">
 
-          <h3 class="h3 service-title">What I Do</h3>
+          <h3 class="h3 service-title">My Expertise</h3>
 
           <ul class="service-list">
 
@@ -264,10 +267,9 @@
 
                 <p class="service-item-text">
                   Using the most advanced fullstack technology, from Mobile development to backend/frontend development,
-                  I can
-                  help you build your product from scratch. I have experience in building cross-platform applications
-                  using
-                  Flutter and React Native.
+                  I can help you build your product from scratch. I have experience in building cross-platform
+                  applications
+                  using Flutter and React Native.
                 </p>
               </div>
 
@@ -372,7 +374,7 @@
             <li class="timeline-item">
 
               <h4 class="h4 timeline-item-title">
-                Senior Software Engineer
+                Senior Machine Learning Engineer
               </h4>
 
               <span class="timeline-item-title" style="color:#ffffff">
@@ -715,7 +717,7 @@
                   <img src="./assets/images/aavaa_desktop_project.jpg" alt="AAVAA Desktop Application" loading="lazy">
                 </figure>
                 <h3 class="project-title">AAVAA Desktop Application</h3>
-                <p class="project-category">Using Flutter and Figma</p>
+                <p class="project-category">Using Flutter, Figma, Firebase, OpenAI, Bluetooth</p>
                 <p class="project-category">Interface to facial gesture detection AI running on edge</p>
 
               </a>
@@ -735,8 +737,28 @@
                   <img src="./assets/images/aavaa_mobile_project.jpg" alt="AAVAA Mobile Application" loading="lazy">
                 </figure>
                 <h3 class="project-title">AAVAA Mobile Application</h3>
-                <p class="project-category">Using Flutter and Figma</p>
+                <p class="project-category">Using Flutter, Figma, Firebase, OpenAI, GCP and Bluetooth</p>
                 <p class="project-category">Interface to facial gesture detection AI running on edge</p>
+              </a>
+            </li>
+
+            <div id="imgModal" class="modal" onclick="closeModal()">
+              <span class="close">&times;</span>
+              <img class="modal-content" id="modalImg">
+            </div>
+
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <a href="#" onclick="openModal('./assets/images/aavaa_assistive_speech.jpg'); return false;">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/aavaa_assistive_speech.jpg" alt="AAVAA Mobile Application" loading="lazy">
+                </figure>
+                <h3 class="project-title">Assistive Speech Application</h3>
+                <p class="project-category">Using Flutter, Figma, OpenAI and GCP</p>
+                <p class="project-category">Environment-aware using microphone, gRPC and websocket and OpenAI API
+                  recommending conversation ideas.</p>
               </a>
             </li>
 
@@ -754,7 +776,7 @@
                   <img src="./assets/images/aavaa_smart_reader.jpg" alt="AAVAA Smart Reader" loading="lazy">
                 </figure>
                 <h3 class="project-title">AAVAA Smart Reader</h3>
-                <p class="project-category">Using Flutter and Figma</p>
+                <p class="project-category">Using Flutter, Figma, OpenAI and GCP</p>
                 <p class="project-category">Running Local LLM, STT and TTS on GPU, NPU and CPU</p>
               </a>
             </li>
