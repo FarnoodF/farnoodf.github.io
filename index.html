@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farnood Faraji</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,300,0,0"
+    rel="stylesheet" />
+
+</head>
+
+<body>
+
+  <!--
+    - #MAIN
+  -->
+
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar data-sidebar-btn>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/my-avatar.png" alt="Farnood Faraji" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Farnood Faraji">Farnood Faraji</h1>
+
+          <p class="title"> Machine Learning Engineer <br> AI Software Engineer </p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Contacts</span>
+
+          <!-- <ion-icon name="chevron-down"></ion-icon> -->
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:farnood.faraji@gmail.com" class="contact-link">farnood.faraji@gmail.com</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+
+              <a href="tel:+15145509483" class="contact-link">+1 (514) 550-9483</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>Montreal, Canada</address>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/farnood-faraji/" target="_blank" class="social-link">
+              <ion-icon name="logo-linkedin" style="font-size: 2em;"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://github.com/farnoodf" target="_blank" class="social-link">
+              <ion-icon name="logo-github" style="font-size: 2em;"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/farnood-faraji/" target="_blank" class="social-link">
+              <a href="https://farnoodf.github.io/" target="_blank" class="social-link">
+                <img src="./assets/images/logo.png" style="width: 2em; height: 2em;" />
+              </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link onclick="elementEnableFunc(sidebar, false)">About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link onclick="elementEnableFunc(sidebar, false)">Resume</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link onclick="elementEnableFunc(sidebar, false)">Portfolio</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link onclick="elementEnableFunc(sidebar, true)">Contact</button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            With 5 years in software and ML engineering, I specialize in developing, maintaining and improving ML
+            models that work in real-time, as well as making the cross-platform and web applications that run those
+            models.
+            I led the award-winning Intel AI PC Challenge and directed a cross-functional team using Agile to boost
+            facial gesture
+            detection by 10% in 4 months. I build end-to-end AI products, from research to the user, with rapid cloud
+            and edge deployment.
+          </p>
+        </section>
+
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">My Expertise</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <span class="material-symbols-rounded size-42">
+                  analytics
+                </span>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Data Science & ML</h4>
+                <p class="service-item-text">
+                  I design and deploy advanced machine learning systems using tools like PyTorch, TensorFlow, and CUDA.
+                  From predictive models to deep learning architectures such as GANs and Transformers, I help businesses
+                  turn data into actionable insights using scalable solutions on platforms like GCP and AWS.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <span class="material-symbols-rounded size-42">
+                  network_intel_node
+                </span>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">MLOps</h4>
+                <p class="service-item-text">
+                  I build end-to-end ML pipelines that automate training, testing, deployment, and monitoring.
+                  Leveraging tools like MLflow, Vertex AI, and AWS SageMaker, I ensure your models are reliable,
+                  reproducible, and production-ready at scale.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <span class="material-symbols-rounded size-42">
+                  api
+                </span>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Software Engineering</h4>
+                <p class="service-item-text">
+                  I develop scalable AI-powered applications using Flutter, React Native, and modern web frameworks.
+                  I specialize in integrating LLM APIs and tools like LangChain to quickly bring smart, user-friendly
+                  interfaces to life across platforms.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <span class="material-symbols-rounded size-42">
+                  monitoring
+                </span>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Project Management</h4>
+                <p class="service-item-text">
+                  I lead cross-functional teams to deliver AI solutions on time and at scale. With experience from
+                  initiatives like the Intel AI PC Challenge and a Google PM certification, I bring clarity, structure,
+                  and measurable outcomes to every project.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+
+        </section>
+
+        <!--
+          - testimonials modal
+        -->
+
+        <div class="modal-container" data-modal-container>
+
+          <div class="overlay" data-overlay></div>
+
+          <section class="testimonials-modal">
+
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
+              </figure>
+
+              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+            </div>
+
+            <div class="modal-content">
+
+              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
+
+              <time datetime="2021-06-14">14 June, 2021</time>
+
+              <div data-modal-text>
+                <p>
+                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                  lot of experience
+                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                  consectetur adipiscing
+                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                </p>
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #RESUME
+      -->
+
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="briefcase-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">
+                Senior Machine Learning Engineer
+              </h4>
+
+              <span class="timeline-item-title" style="color:#ffffff">
+                AAVAA Inc.
+              </span>
+
+              <span>Jan 2024 — Present</span>
+
+              <p class="timeline-text">
+                Led projects, delivered end-to-end AI solutions, and optimized ML models for performance and
+                scalability.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">
+                Machine Learning Engineer
+              </h4>
+
+              <span class="timeline-item-title" style="color:#ffffff">
+                AAVAA Inc.
+              </span>
+
+              <span>Feb 2020 — Dec 2023</span>
+
+              <p class="timeline-text">
+                Developed and deployed machine learning models for real-time applications, developed applications for
+                inference.
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">M.Sc in Electrical Engineering (Thesis)</h4>
+
+              <span class="timeline-item-title" style="color:#ffffff">
+                McGill University
+              </span>
+
+              <span>Jan 2018 — Aug 2020</span>
+
+              <p class="timeline-text">
+                Focus on Machine Learning and Signal Processing
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">B.Sc in Electrical Engineering (Honours)</h4>
+
+              <span class="timeline-item-title" style="color:#ffffff">
+                McGill University
+              </span>
+
+              <span>Sep 2015 — Dec 2017</span>
+
+              <p class="timeline-text">
+                GPA: 3.7
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">B.Eng in Electrical Engineering</h4>
+
+              <span class="timeline-item-title" style="color:#ffffff">
+                Sharif University of Technology
+              </span>
+
+              <h4 class="h4 timeline-item-title"></h4>
+
+              <span>Sep 2012 — April 2015</span>
+
+              <p class="timeline-text">
+                GPA: 17 / 20
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="cube-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Projects</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Multiplatform Text-To-Speech Software Using OpenAI and Flutter</h4>
+
+              <span>Aug 2024 — Oct 2024</span>
+
+              <p class="timeline-text">
+                Created a multiplatform application that generates voice for the user given the speed, voice type and
+                the text using the OpenAI API.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Twitter Tweets Report Dashboard</h4>
+              <span>Nov 2022 — Dec 2022</span>
+
+              <p class="timeline-text">
+                Built a real-time Twitter analytics dashboard for Canada tweets using a Kafka/Spark-MySQL pipeline,
+                Flask server and HTML/JavaScript frontend. Dockerized for scalability.
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="ribbon-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Certificates</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Project Management</h4>
+
+              <span class="timeline-item-title" style="color:#ffffff">
+                Google / Coursera
+              </span>
+
+              <span>Mar 2024 — Oct 2024</span>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="newspaper-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Publications</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+
+              <a href="https://ieeexplore.ieee.org/document/9195238" target="_blank" style="text-decoration:none;">
+                <h4 class="h4 timeline-item-title">On the Use of Audio Fingerprinting Features for Speech Enhancement
+                  with Generative Adversarial Network
+                </h4>
+              </a>
+
+
+              <span class="timeline-item-title" style="color:#ffffff">
+                IEEE Intl. Workshop on Signal Proc. Systems (SiPS)
+              </span>
+
+              <span>Oct 2020</span>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+
+        <!-- <section class="skills">
+
+          <h3 class="h3 skills-title">My skills</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h4 class="h4">Programming</h4>
+              </div>
+
+              <div class="title-wrapper">
+                <h5 class="h5">python</h5>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Tensorflow & Keras</h5>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Google Cloud Platform</h5>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Flask</h5>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section> -->
+
+      </article>
+
+
+
+
+
+      <!--
+        - #PORTFOLIO
+      -->
+
+      <article class="portfolio" data-page="portfolio">
+
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list">
+
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Applications</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Web Development</button>
+            </li>
+
+          </ul>
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              <div class="select-value" data-selecct-value>Select category</div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+            <ul class="select-list">
+
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Applications</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Web development</button>
+              </li>
+
+            </ul>
+
+          </div>
+
+          <ul class="project-list">
+
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <a href="#" onclick="openModal('./assets/images/aavaa_desktop_project.jpg'); return false;">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/aavaa_desktop_project.jpg" alt="AAVAA Desktop Application" loading="lazy">
+                </figure>
+                <h3 class="project-title">AAVAA Desktop Application</h3>
+                <p class="project-category">Using Flutter, Figma, Firebase, OpenAI, Bluetooth</p>
+                <p class="project-category">Interface to facial gesture detection AI running on edge</p>
+
+              </a>
+            </li>
+
+            <div id="imgModal" class="modal" onclick="closeModal()">
+              <span class="close">&times;</span>
+              <img class="modal-content" id="modalImg">
+            </div>
+
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <a href="#" onclick="openModal('./assets/images/aavaa_mobile_project.jpg'); return false;">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/aavaa_mobile_project.jpg" alt="AAVAA Mobile Application" loading="lazy">
+                </figure>
+                <h3 class="project-title">AAVAA Mobile Application</h3>
+                <p class="project-category">Using Flutter, Figma, Firebase, OpenAI, GCP and Bluetooth</p>
+                <p class="project-category">Interface to facial gesture detection AI running on edge</p>
+              </a>
+            </li>
+
+            <div id="imgModal" class="modal" onclick="closeModal()">
+              <span class="close">&times;</span>
+              <img class="modal-content" id="modalImg">
+            </div>
+
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <a href="#" onclick="openModal('./assets/images/aavaa_assistive_speech.jpg'); return false;">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/aavaa_assistive_speech.jpg" alt="AAVAA Mobile Application" loading="lazy">
+                </figure>
+                <h3 class="project-title">Assistive Speech Application</h3>
+                <p class="project-category">Using Flutter, Figma, OpenAI and GCP</p>
+                <p class="project-category">Environment-aware using microphone, gRPC and websocket and OpenAI API
+                  recommending conversation ideas.</p>
+              </a>
+            </li>
+
+            <div id="imgModal" class="modal" onclick="closeModal()">
+              <span class="close">&times;</span>
+              <img class="modal-content" id="modalImg">
+            </div>
+
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <a href="#" onclick="openModal('./assets/images/aavaa_smart_reader.jpg'); return false;">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/aavaa_smart_reader.jpg" alt="AAVAA Smart Reader" loading="lazy">
+                </figure>
+                <h3 class="project-title">AAVAA Smart Reader</h3>
+                <p class="project-category">Using Flutter, Figma, OpenAI and GCP</p>
+                <p class="project-category">Running Local LLM, STT and TTS on GPU, NPU and CPU</p>
+              </a>
+            </li>
+
+            <div id="imgModal" class="modal" onclick="closeModal()">
+              <span class="close">&times;</span>
+              <img class="modal-content" id="modalImg">
+            </div>
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#" onclick="openModal('./assets/images/aavaa_label_project.jpg'); return false;">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/aavaa_label_project.jpg" alt="AAVAA Labeler" loading="lazy">
+                </figure>
+                <h3 class="project-title">AAVAA Labeler</h3>
+                <p class="project-category">Using Vue.js, D3.js, Flask and Redis</p>
+                <p class="project-category">Data annotation and ML inference</p>
+              </a>
+            </li>
+
+            <div id="imgModal" class="modal" onclick="closeModal()">
+              <span class="close">&times;</span>
+              <img class="modal-content" id="modalImg">
+            </div>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+      <!--
+        - #BLOG
+      -->
+
+      <!-- <article class="blog" data-page="blog">
+
+        <header>
+          <h2 class="h2 article-title">Blog</h2>
+        </header>
+
+        <section class="blog-posts">
+
+          <ul class="blog-posts-list">
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
+
+                  <p class="blog-text">
+                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
+
+                  <p class="blog-text">
+                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Design digest #80</h3>
+
+                  <p class="blog-text">
+                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
+
+                  <p class="blog-text">
+                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
+
+                  <p class="blog-text">
+                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Design digest #79</h3>
+
+                  <p class="blog-text">
+                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article> -->
+
+      <!--
+        - #CONTACT
+      -->
+
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d178787.32659314846!2d-73.85195540386118!3d45.5593374902396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91a541c64b70d%3A0x654e3138211fefef!2sMontreal%2C%20QC!5e0!3m2!1sen!2sca!4v1663559285227!5m2!1sen!2sca"
+              width="400" height="300" loading="lazy"></iframe>
+          </figure>
+        </section>
+
+        <section class="contact-form">
+
+          <h3 class="h3 form-title">Contact Form</h3>
+
+          <form action="https://formspree.io/f/mjvzyjje" method="POST" class="form" data-form>
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+            </div>
+
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+
+            <button class="form-btn" type="submit" disabled data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+
+          </form>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
