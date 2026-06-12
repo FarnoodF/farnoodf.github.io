@@ -1,4 +1,39 @@
-# vCard - Personal portfolio
+# Farnood Faraji — Personal portfolio
+
+Static portfolio site deployed to [farnoodf.github.io](https://farnoodf.github.io) and [farnood.tech](https://farnood.tech) on every push to `main`.
+
+## Deployment
+
+Pushes to `main` run [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), which:
+
+1. **GitHub Pages** — publishes `index.html` and `assets/` to https://farnoodf.github.io
+2. **Vercel** — deploys the same files to production at https://farnood.tech
+
+### One-time Vercel setup
+
+1. Create a project at [vercel.com/new](https://vercel.com/new) linked to `FarnoodF/farnoodf.github.io` (or run `vercel link` locally).
+2. In the Vercel project → **Settings → Domains**, add `farnood.tech` and `www.farnood.tech`.
+3. Create a token at [vercel.com/account/tokens](https://vercel.com/account/tokens).
+4. Copy **Org ID** and **Project ID** from Vercel project settings (or from `.vercel/project.json` after `vercel link`).
+5. Add these GitHub repository secrets (**Settings → Secrets and variables → Actions**):
+   - `VERCEL_TOKEN`
+   - `VERCEL_ORG_ID`
+   - `VERCEL_PROJECT_ID`
+
+### Porkbun DNS (farnood.tech)
+
+In Porkbun → **farnood.tech → DNS**, add:
+
+| Type  | Host | Answer              |
+|-------|------|---------------------|
+| A     | @    | `76.76.21.21`       |
+| CNAME | www  | `cname.vercel-dns.com` |
+
+Vercel will verify the domain once DNS propagates (usually a few minutes).
+
+---
+
+# vCard - Personal portfolio (template)
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/codewithsadee/vcard-personal-portfolio)
 ![GitHub stars](https://img.shields.io/github/stars/codewithsadee/vcard-personal-portfolio?style=social)
