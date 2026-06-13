@@ -4,21 +4,20 @@ Static portfolio site deployed to [farnoodf.github.io](https://farnoodf.github.i
 
 ## Deployment
 
-Pushes to `main` run [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), which:
+Pushes to `main` update both sites:
 
-1. **GitHub Pages** — publishes `index.html` and `assets/` to https://farnoodf.github.io
-2. **Vercel** — deploys the same files to production at https://farnood.tech
+1. **GitHub Pages** — [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) publishes `index.html` and `assets/` to https://farnoodf.github.io
+2. **Vercel** — connect this repo in the Vercel dashboard so production deploys to https://farnood.tech on every `main` push
 
 ### One-time Vercel setup
 
-1. Create a project at [vercel.com/new](https://vercel.com/new) linked to `FarnoodF/farnoodf.github.io` (or run `vercel link` locally).
-2. In the Vercel project → **Settings → Domains**, add `farnood.tech` and `www.farnood.tech`.
-3. Create a token at [vercel.com/account/tokens](https://vercel.com/account/tokens).
-4. Copy **Org ID** and **Project ID** from Vercel project settings (or from `.vercel/project.json` after `vercel link`).
-5. Add these GitHub repository secrets (**Settings → Secrets and variables → Actions**):
-   - `VERCEL_TOKEN`
-   - `VERCEL_ORG_ID`
-   - `VERCEL_PROJECT_ID`
+1. Go to [vercel.com/new](https://vercel.com/new) and import `FarnoodF/farnoodf.github.io`.
+2. Leave the framework preset as **Other** (static site, no build command).
+3. Set the production branch to `main` and deploy.
+4. In the project → **Settings → Domains**, add `farnood.tech` and `www.farnood.tech`.
+5. Vercel will show the DNS records to add at Porkbun (below).
+
+After this, every push to `main` triggers both GitHub Pages and Vercel automatically — no GitHub secrets required.
 
 ### Porkbun DNS (farnood.tech)
 
