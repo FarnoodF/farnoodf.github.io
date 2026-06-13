@@ -4,31 +4,20 @@ Static portfolio site deployed to [farnoodf.github.io](https://farnoodf.github.i
 
 ## Deployment
 
-Pushes to `main` update both sites:
+Pushes to `main` run [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), which publishes `index.html` and `assets/` to GitHub Pages. The site is served at:
 
-1. **GitHub Pages** — [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) publishes `index.html` and `assets/` to https://farnoodf.github.io
-2. **Vercel** — connect this repo in the Vercel dashboard so production deploys to https://farnood.tech on every `main` push
+- https://farnood.tech (custom domain)
+- https://farnoodf.github.io (redirects to `farnood.tech`)
 
-### One-time Vercel setup
+Custom domain is configured in the repo's GitHub Pages settings. Porkbun DNS records:
 
-1. Go to [vercel.com/new](https://vercel.com/new) and import `FarnoodF/farnoodf.github.io`.
-2. Leave the framework preset as **Other** (static site, no build command).
-3. Set the production branch to `main` and deploy.
-4. In the project → **Settings → Domains**, add `farnood.tech` and `www.farnood.tech`.
-5. Vercel will show the DNS records to add at Porkbun (below).
-
-After this, every push to `main` triggers both GitHub Pages and Vercel automatically — no GitHub secrets required.
-
-### Porkbun DNS (farnood.tech)
-
-In Porkbun → **farnood.tech → DNS**, add:
-
-| Type  | Host | Answer              |
-|-------|------|---------------------|
-| A     | @    | `76.76.21.21`       |
-| CNAME | www  | `cname.vercel-dns.com` |
-
-Vercel will verify the domain once DNS propagates (usually a few minutes).
+| Type  | Host | Answer |
+|-------|------|--------|
+| A     | `@`  | `185.199.108.153` |
+| A     | `@`  | `185.199.109.153` |
+| A     | `@`  | `185.199.110.153` |
+| A     | `@`  | `185.199.111.153` |
+| CNAME | `www` | `farnoodf.github.io` |
 
 ---
 
