@@ -1,11 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Farnood Faraji</title>
+  <title>Farnood Faraji | Machine Learning &amp; AI Software Engineer</title>
+  <meta name="description" content="Montreal-based ML engineer with 5+ years building real-time AI systems, MLOps pipelines, and cross-platform apps. Intel AI PC Challenge winner.">
+  <meta name="author" content="Farnood Faraji">
+  <meta name="theme-color" content="#1e1e1f">
+  <link rel="canonical" href="https://farnood.tech/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://farnood.tech/">
+  <meta property="og:title" content="Farnood Faraji | Machine Learning &amp; AI Software Engineer">
+  <meta property="og:description" content="Montreal-based ML engineer with 5+ years building real-time AI systems, MLOps pipelines, and cross-platform apps. Intel AI PC Challenge winner.">
+  <meta property="og:image" content="https://farnood.tech/assets/images/profile.jpeg">
+  <meta property="og:locale" content="en_CA">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Farnood Faraji | Machine Learning &amp; AI Software Engineer">
+  <meta name="twitter:description" content="Montreal-based ML engineer with 5+ years building real-time AI systems, MLOps pipelines, and cross-platform apps. Intel AI PC Challenge winner.">
+  <meta name="twitter:image" content="https://farnood.tech/assets/images/profile.jpeg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Farnood Faraji",
+    "jobTitle": "Machine Learning Engineer",
+    "url": "https://farnood.tech/",
+    "image": "https://farnood.tech/assets/images/profile.jpeg",
+    "email": "mailto:farnood.faraji@gmail.com",
+    "telephone": "+1-514-550-9483",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Montreal",
+      "addressRegion": "QC",
+      "addressCountry": "CA"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/farnood-faraji/",
+      "https://github.com/farnoodf"
+    ]
+  }
+  </script>
 
   <!--
     - favicon
@@ -45,7 +86,7 @@
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Farnood Faraji" width="80">
+          <img src="./assets/images/profile.jpeg" alt="Farnood Faraji, machine learning engineer based in Montreal, Canada" width="80">
         </figure>
 
         <div class="info-content">
@@ -117,22 +158,21 @@
         <ul class="social-list">
 
           <li class="social-item">
-            <a href="https://www.linkedin.com/in/farnood-faraji/" target="_blank" class="social-link">
+            <a href="https://www.linkedin.com/in/farnood-faraji/" target="_blank" rel="me noopener noreferrer" class="social-link" aria-label="LinkedIn profile">
               <ion-icon name="logo-linkedin" style="font-size: 2em;"></ion-icon>
             </a>
           </li>
 
           <li class="social-item">
-            <a href="https://github.com/farnoodf" target="_blank" class="social-link">
+            <a href="https://github.com/farnoodf" target="_blank" rel="me noopener noreferrer" class="social-link" aria-label="GitHub profile">
               <ion-icon name="logo-github" style="font-size: 2em;"></ion-icon>
             </a>
           </li>
 
           <li class="social-item">
-            <a href="https://www.linkedin.com/in/farnood-faraji/" target="_blank" class="social-link">
-              <a href="https://farnoodf.github.io/" target="_blank" class="social-link">
-                <img src="./assets/images/logo.png" style="width: 2em; height: 2em;" />
-              </a>
+            <a href="https://farnood.tech/" target="_blank" rel="me noopener noreferrer" class="social-link" aria-label="Personal website">
+              <img src="./assets/images/logo.png" alt="Farnood Faraji personal website" style="width: 2em; height: 2em;">
+            </a>
           </li>
 
         </ul>
@@ -155,24 +195,24 @@
         - #NAVBAR
       -->
 
-      <nav class="navbar">
+      <nav class="navbar" aria-label="Main">
 
         <ul class="navbar-list">
 
           <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link onclick="elementEnableFunc(sidebar, false)">About</button>
+            <a href="#about" class="navbar-link active" data-nav-link data-page="about">About</a>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link onclick="elementEnableFunc(sidebar, false)">Resume</button>
+            <a href="#resume" class="navbar-link" data-nav-link data-page="resume">Resume</a>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link onclick="elementEnableFunc(sidebar, false)">Portfolio</button>
+            <a href="#portfolio" class="navbar-link" data-nav-link data-page="portfolio">Portfolio</a>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link onclick="elementEnableFunc(sidebar, true)">Contact</button>
+            <a href="#contact" class="navbar-link" data-nav-link data-page="contact">Contact</a>
           </li>
 
         </ul>
@@ -187,7 +227,7 @@
         - #ABOUT
       -->
 
-      <article class="about  active" data-page="about">
+      <article class="about active" id="about" data-page="about">
 
         <header>
           <h2 class="h2 article-title">About me</h2>
@@ -284,50 +324,6 @@
 
         </section>
 
-        <!--
-          - testimonials modal
-        -->
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
-            </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-              <time datetime="2021-06-14">14 June, 2021</time>
-
-              <div data-modal-text>
-                <p>
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                </p>
-              </div>
-
-            </div>
-
-          </section>
-
-        </div>
-
       </article>
 
 
@@ -338,7 +334,7 @@
         - #RESUME
       -->
 
-      <article class="resume" data-page="resume">
+      <article class="resume" id="resume" data-page="resume">
 
         <header>
           <h2 class="h2 article-title">Resume</h2>
@@ -656,7 +652,7 @@
         - #PORTFOLIO
       -->
 
-      <article class="portfolio" data-page="portfolio">
+      <article class="portfolio" id="portfolio" data-page="portfolio">
 
         <header>
           <h2 class="h2 article-title">Portfolio</h2>
@@ -1010,7 +1006,7 @@
         - #CONTACT
       -->
 
-      <article class="contact" data-page="contact">
+      <article class="contact" id="contact" data-page="contact">
 
         <header>
           <h2 class="h2 article-title">Contact</h2>
@@ -1061,6 +1057,12 @@
     - custom js link
   -->
   <script src="./assets/js/script.js"></script>
+
+  <noscript>
+    <style>
+      article { display: block !important; margin-bottom: 30px; }
+    </style>
+  </noscript>
 
   <!--
     - ionicon link

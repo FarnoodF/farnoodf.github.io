@@ -260,9 +260,11 @@ article {
 
 .icon-box ion-icon { --ionicon-stroke-width: 35px; }
 
-article { display: none; }
+article { display: block; }
 
-article.active {
+.js article { display: none; }
+
+.js article.active {
   display: block;
   animation: fade 0.5s ease backwards;
 }
@@ -386,7 +388,14 @@ main {
 
 .avatar-box {
   background: var(--bg-gradient-onyx);
-  border-radius: 20px;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.avatar-box img {
+  display: block;
+  border-radius: 28px;
+  object-fit: cover;
 }
 
 .info-content .name {
@@ -534,6 +543,7 @@ main {
   font-size: var(--fs-4);
   padding: 20px 12px;
   transition: color var(--transition-1);
+  text-decoration: none;
 }
 
 .navbar-link:hover,
@@ -1397,7 +1407,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .sidebar-info { gap: 25px; }
 
-  .avatar-box { border-radius: 30px; }
+  .avatar-box { border-radius: 28px; }
 
   .avatar-box img { width: 120px; }
 

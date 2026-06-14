@@ -28,6 +28,8 @@ jobs:
         run: |
           mkdir site
           cp index.html site/
+          cp robots.txt site/
+          cp sitemap.xml site/
           cp -r assets site/
 
       - name: Setup Pages
