@@ -28,6 +28,7 @@ jobs:
         run: |
           mkdir site
           cp index.html site/
+          cp favicon.ico site/
           cp robots.txt site/
           cp sitemap.xml site/
           cp -r assets site/
