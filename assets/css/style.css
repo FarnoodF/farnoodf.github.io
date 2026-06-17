@@ -132,8 +132,6 @@ li { list-style: none; }
 
 img, ion-icon, a, button, time, span { display: block; }
 
-span.size-42 { font-size: 42px; }
-
 .modal {
   display: none;
   position: fixed;
@@ -606,10 +604,17 @@ main {
 
 .service-icon-box {
   margin-bottom: 10px;
-  width: 42px; /* Adjust the size as needed */
-  height: 10px;
-  font-size: 24px; /* Adjust the icon size as needed */
-  color: var(--orange-yellow-crayola); /* Use your golden color variable */
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--orange-yellow-crayola);
+}
+
+.service-icon-box ion-icon {
+  font-size: 42px;
+  --ionicon-stroke-width: 32px;
 }
 
 .service-icon-box img { margin: auto; }
