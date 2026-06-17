@@ -3,179 +3,236 @@
 document.documentElement.classList.remove('no-js');
 document.documentElement.classList.add('js');
 
+const MOBILE_BREAKPOINT = 1250;
 
+const isMobileView = () => window.innerWidth < MOBILE_BREAKPOINT;
 
-// element toggle function
-const elementToggleFunc = function (elem) {
-  function isMobileView() {
-    return window.innerWidth < 1250;
-  }
+const elementToggleFunc = (elem) => {
+  if (isMobileView()) elem.classList.toggle('active');
+};
+
+const elementEnableFunc = (elem, enable) => {
   if (isMobileView()) {
-    elem.classList.toggle("active");
-  }
-}
-
-const elementEnableFunc = function (elem, enable) {
-  function isMobileView() {
-    return window.innerWidth < 1250;
-  }
-  if (isMobileView()) {
-    if (enable) {
-      elem.classList.add("active");
-    } else {
-      elem.classList.remove("active");
-    }
+    elem.classList.toggle('active', enable);
   } else {
-    elem.classList.remove("active");
+    elem.classList.remove('active');
   }
+};
+
+// Sidebar
+const sidebar = document.querySelector('[data-sidebar]');
+const sidebarBtn = document.querySelector('button[data-sidebar-btn]');
+
+if (sidebarBtn && sidebar) {
+  sidebarBtn.addEventListener('click', () => elementToggleFunc(sidebar));
 }
 
+// Portfolio filter
+const select = document.querySelector('[data-select]');
+const selectItems = document.querySelectorAll('[data-select-item]');
+const selectValue = document.querySelector('[data-selecct-value]');
+const filterBtn = document.querySelectorAll('[data-filter-btn]');
+const filterItems = document.querySelectorAll('[data-filter-item]');
 
+const filterFunc = (selectedValue) => {
+  const normalized = selectedValue.toLowerCase();
 
-// sidebar variables
-const sidebar = document.querySelector("[data-sidebar]");
-const sidebarBtn = document.querySelector("[data-sidebar-btn]");
-
-// sidebar toggle functionality for mobile
-sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
-
-
-
-// custom select variables
-const select = document.querySelector("[data-select]");
-const selectItems = document.querySelectorAll("[data-select-item]");
-const selectValue = document.querySelector("[data-selecct-value]");
-const filterBtn = document.querySelectorAll("[data-filter-btn]");
+  filterItems.forEach((item) => {
+    const category = item.dataset.category;
+    const show = normalized === 'all' || normalized === category;
+    item.classList.toggle('active', show);
+  });
+};
 
 if (select) {
-  select.addEventListener("click", function () { elementToggleFunc(this); });
+  select.addEventListener('click', () => elementToggleFunc(select));
 }
 
-// add event in all select items
-for (let i = 0; i < selectItems.length; i++) {
-  selectItems[i].addEventListener("click", function () {
-
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
+selectItems.forEach((item) => {
+  item.addEventListener('click', () => {
+    const selectedValue = item.innerText.toLowerCase();
+    if (selectValue) selectValue.innerText = item.innerText;
     elementToggleFunc(select);
     filterFunc(selectedValue);
-
   });
-}
+});
 
-// filter variables
-const filterItems = document.querySelectorAll("[data-filter-item]");
-
-const filterFunc = function (selectedValue) {
-
-  for (let i = 0; i < filterItems.length; i++) {
-
-    if (selectedValue === "all") {
-      filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
-      filterItems[i].classList.add("active");
-    } else {
-      filterItems[i].classList.remove("active");
-    }
-
-  }
-
-}
-
-// add event in all filter button items for large screen
 if (filterBtn.length > 0) {
   let lastClickedBtn = filterBtn[0];
 
-  for (let i = 0; i < filterBtn.length; i++) {
-
-    filterBtn[i].addEventListener("click", function () {
-
-      let selectedValue = this.innerText.toLowerCase();
-      selectValue.innerText = this.innerText;
+  filterBtn.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const selectedValue = btn.innerText.toLowerCase();
+      if (selectValue) selectValue.innerText = btn.innerText;
       filterFunc(selectedValue);
 
-      lastClickedBtn.classList.remove("active");
-      this.classList.add("active");
-      lastClickedBtn = this;
-
+      lastClickedBtn.classList.remove('active');
+      btn.classList.add('active');
+      lastClickedBtn = btn;
     });
-
-  }
-}
-
-
-
-// contact form variables
-const form = document.querySelector("[data-form]");
-const formInputs = document.querySelectorAll("[data-form-input]");
-const formBtn = document.querySelector("[data-form-btn]");
-
-// add event to all form input field
-for (let i = 0; i < formInputs.length; i++) {
-  formInputs[i].addEventListener("input", function () {
-
-    // check form validation
-    if (form.checkValidity()) {
-      formBtn.removeAttribute("disabled");
-    } else {
-      formBtn.setAttribute("disabled", "");
-    }
-
   });
 }
 
+// Contact form
+const form = document.querySelector('[data-form]');
+const formInputs = document.querySelectorAll('[data-form-input]');
+const formBtn = document.querySelector('[data-form-btn]');
 
+if (form && formBtn) {
+  formInputs.forEach((input) => {
+    input.addEventListener('input', () => {
+      if (form.checkValidity()) {
+        formBtn.removeAttribute('disabled');
+      } else {
+        formBtn.setAttribute('disabled', '');
+      }
+    });
+  });
+}
 
-// page navigation variables
-const navigationLinks = document.querySelectorAll("[data-nav-link]");
-const pages = document.querySelectorAll("[data-page]");
-const validPages = ["about", "resume", "portfolio", "contact"];
+// Scroll reveal — must be defined before page navigation uses it
+let revealObserver = null;
 
-const activatePage = function (pageName) {
-  for (let i = 0; i < pages.length; i++) {
-    pages[i].classList.toggle("active", pages[i].dataset.page === pageName);
+function initScrollReveal() {
+  const activeArticle = document.querySelector('article.active');
+  const scope = activeArticle || document;
+  const reveals = scope.querySelectorAll('.reveal:not(.is-visible)');
+
+  if (reveals.length === 0) return;
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    reveals.forEach((el) => el.classList.add('is-visible'));
+    return;
   }
 
-  for (let i = 0; i < navigationLinks.length; i++) {
-    navigationLinks[i].classList.toggle("active", navigationLinks[i].dataset.page === pageName);
-  }
+  if (revealObserver) revealObserver.disconnect();
 
-  elementEnableFunc(sidebar, pageName === "contact");
-};
+  revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.08, rootMargin: '0px 0px -24px 0px' }
+  );
 
-const getPageFromHash = function () {
+  reveals.forEach((el) => revealObserver.observe(el));
+}
+
+// Page navigation — scope selectors to avoid matching hero CTAs / articles twice
+const navigationLinks = document.querySelectorAll('.navbar [data-nav-link]');
+const pages = document.querySelectorAll('article[data-page]');
+const navIndicator = document.querySelector('[data-nav-indicator]');
+const validPages = ['about', 'resume', 'portfolio', 'contact'];
+
+function updateNavIndicator(activeLink) {
+  if (!navIndicator || !activeLink) return;
+
+  const navbar = activeLink.closest('.navbar');
+  if (!navbar) return;
+
+  const navRect = navbar.getBoundingClientRect();
+  const linkRect = activeLink.getBoundingClientRect();
+
+  navIndicator.style.width = `${linkRect.width}px`;
+  navIndicator.style.left = `${linkRect.left - navRect.left}px`;
+}
+
+function activatePage(pageName) {
+  pages.forEach((page) => {
+    page.classList.toggle('active', page.dataset.page === pageName);
+  });
+
+  let activeLink = null;
+
+  navigationLinks.forEach((link) => {
+    const isActive = link.dataset.page === pageName;
+    link.classList.toggle('active', isActive);
+    if (isActive) activeLink = link;
+  });
+
+  elementEnableFunc(sidebar, pageName === 'contact');
+  requestAnimationFrame(() => updateNavIndicator(activeLink));
+}
+
+function getPageFromHash() {
   const hash = window.location.hash.slice(1).toLowerCase();
-  return validPages.includes(hash) ? hash : "about";
-};
+  return validPages.includes(hash) ? hash : 'about';
+}
 
-const navigateToPage = function (pageName, updateHash) {
+function navigateToPage(pageName, updateHash) {
   activatePage(pageName);
 
   if (updateHash && window.location.hash !== `#${pageName}`) {
-    history.replaceState(null, "", `#${pageName}`);
+    history.replaceState(null, '', `#${pageName}`);
   }
 
-  window.scrollTo(0, 0);
-};
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 
-for (let i = 0; i < navigationLinks.length; i++) {
-  navigationLinks[i].addEventListener("click", function (event) {
-    event.preventDefault();
-    navigateToPage(this.dataset.page, true);
+  requestAnimationFrame(() => {
+    initScrollReveal();
   });
 }
 
-window.addEventListener("hashchange", function () {
+document.querySelectorAll('[data-nav-link]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    navigateToPage(link.dataset.page, true);
+  });
+});
+
+window.addEventListener('hashchange', () => {
   navigateToPage(getPageFromHash(), false);
+});
+
+window.addEventListener('resize', () => {
+  const activeLink = document.querySelector('.navbar [data-nav-link].active');
+  updateNavIndicator(activeLink);
 });
 
 navigateToPage(getPageFromHash(), false);
 
-function openModal(imageSrc) {
-  document.getElementById('modalImg').src = imageSrc;
-  document.getElementById('imgModal').style.display = "block";
+// Image modal
+const imgModal = document.getElementById('imgModal');
+const modalImg = document.getElementById('modalImg');
+const modalClose = imgModal?.querySelector('.modal-close');
+const projectCards = document.querySelectorAll('[data-modal-src]');
+
+function openModal(src, alt) {
+  if (!imgModal || !modalImg) return;
+
+  modalImg.src = src;
+  modalImg.alt = alt || 'Project preview';
+  imgModal.removeAttribute('hidden');
+  document.body.style.overflow = 'hidden';
+  modalClose?.focus();
 }
 
 function closeModal() {
-  document.getElementById('imgModal').style.display = "none";
+  if (!imgModal) return;
+
+  imgModal.setAttribute('hidden', '');
+  document.body.style.overflow = '';
+  modalImg.src = '';
 }
+
+projectCards.forEach((card) => {
+  card.addEventListener('click', () => {
+    openModal(card.dataset.modalSrc, card.dataset.modalAlt);
+  });
+});
+
+modalClose?.addEventListener('click', closeModal);
+
+imgModal?.addEventListener('click', (event) => {
+  if (event.target === imgModal) closeModal();
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && imgModal && !imgModal.hasAttribute('hidden')) {
+    closeModal();
+  }
+});
