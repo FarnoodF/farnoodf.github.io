@@ -26,12 +26,8 @@ jobs:
 
       - name: Stage site files
         run: |
-          mkdir site
-          cp index.html site/
-          cp favicon.ico site/
-          cp robots.txt site/
-          cp sitemap.xml site/
-          cp -r assets site/
+          chmod +x scripts/stage-site.sh
+          scripts/stage-site.sh "${GITHUB_SHA::7}"
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
