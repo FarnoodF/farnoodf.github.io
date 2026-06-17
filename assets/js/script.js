@@ -151,8 +151,8 @@ const getPageFromHash = function () {
 const navigateToPage = function (pageName, updateHash) {
   activatePage(pageName);
 
-  if (updateHash) {
-    history.pushState(null, "", `#${pageName}`);
+  if (updateHash && window.location.hash !== `#${pageName}`) {
+    history.replaceState(null, "", `#${pageName}`);
   }
 
   window.scrollTo(0, 0);
